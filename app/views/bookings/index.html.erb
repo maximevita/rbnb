@@ -1,0 +1,9 @@
+<% @bookings.each do |booking| %>
+  <p><%= booking.begin_date %></p>
+  <p><%= booking.end_date %></p>
+  <p><%= booking.request_status %></p>
+  <p><%= booking.review %></p>
+  <p><%= booking.rating %></p>
+  <!-- not sure about this last one -->
+  <p><%= booking.flat.title %></p>
+<% end %>
