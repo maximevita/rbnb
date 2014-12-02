@@ -1,5 +1,4 @@
 <h1><%= @flat.title %></h1>
-<h2><%= current_user.name %></h2>
 <p><%= @flat.address %></p>
 <p><%= @flat.price_per_day %> € / day</p>
 <p><%= @flat.housing_type %></p>
@@ -8,6 +7,7 @@
 
 <!-- TODO List all photos -->
 
+<%= link_to "Book this flat", new_flat_booking_path(@flat) %><br>
 
 <%= link_to "Add a picture for the flat", new_flat_picture_path(@flat) %><br>
 <%= link_to "Edit the flat", edit_flat_path(@flat) %><br>
