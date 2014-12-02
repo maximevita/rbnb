@@ -1,10 +1,6 @@
 <p>booking#show</p>
-<p><%= @booking.begin_date %></p>
-<p><%= @booking.end_date %></p>
-<p><%= @booking.request_status %></p>
-<p><%= @booking.review %></p>
-<p><%= @booking.rating %></p>
-<!-- not sure about the last ones -->
-<p><%= @booking.flat.title %></p>
-<p><%= @booking.flat.pictures %></p>
-<p><%= @booking.flat.address %></p>
+<p>You booked from the <%= @booking.begin_date %></p>
+<p>To the <%= @booking.end_date %></p>
+<p>The request status is currently: <%= @booking.request_status %></p>
+<p>Add a review for this booking TODO FORM<%= @booking.review %></p>
+<p>Add a rating for this booking TODO FORM<%= @booking.rating %></p>
