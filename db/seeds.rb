@@ -12,7 +12,7 @@
     password: Faker::Internet.password(8),
     name: Faker::Name.name,
     phone: Faker::PhoneNumber.phone_number,
-    profile_pic_url: Faker::Avatar.image
+    # profile_pic_url: Faker::Avatar.image
     )
   user.save
 
@@ -25,6 +25,6 @@
       capacity: rand(1..5),
       housing_type: ['flat', 'house', 'castle'].sample,
     )
-    post.save
+    flat.save
   end
 end
