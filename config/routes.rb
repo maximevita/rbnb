@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "flats#index"
+  root to: "welcomes#index"
 
   resources :flats do
    resources :bookings, only: [:new, :create]
