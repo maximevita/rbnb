@@ -1,0 +1,9 @@
+<%= link_to "publish an announce", new_flat_path %>
+<ul>
+  <% @flats.each do |flat| %>
+    <li>
+      <h2><%= flat.title %></h2>
+      <p><%= link_to "See this flat", flat_path(flat) %></p>
+    </li>
+  <% end %>
+</ul>
