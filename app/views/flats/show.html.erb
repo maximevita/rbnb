@@ -1,0 +1,13 @@
+<h1><%= @flat.name %></h1>
+<h2><%= @flat.user %></h2>
+<p><%= @flat.address %></p>
+<p><%= @flat.price_per_day %></p>
+<p><%= @flat.type %></p>
+<p><%= @flat.capacity %></p>
+<p><%= @flat.description %></p>
+
+<!-- TODO List all photos -->
+
+
+<%= link_to "Add a picture for the flat", new_flat_picture_path(@flat) %><br>
+<%= link_to "Back to all flats", flats_path %>
