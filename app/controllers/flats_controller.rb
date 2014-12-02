@@ -1,6 +1,6 @@
 class FlatsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_flat, only: [:show, :edit, :update]
+  before_action :set_flat, only: [:show, :edit, :update, :destroy]
 
   def index
     @flats = Flat.all
@@ -31,6 +31,11 @@ class FlatsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @flat.destroy
+    redirect_to flats_path
   end
 
   private

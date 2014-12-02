@@ -11,4 +11,6 @@
 
 <%= link_to "Add a picture for the flat", new_flat_picture_path(@flat) %><br>
 <%= link_to "Edit the flat", edit_flat_path(@flat) %><br>
-<%= link_to "Back to all flats", flats_path %>
+<%= link_to "Back to all flats", flats_path %><br>
+<%= link_to "Delete this flat", flat_path(@flat), method: :delete,
+data:{ confirm: "Are you sure?" } %>
