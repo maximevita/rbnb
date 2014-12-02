@@ -1,6 +1,6 @@
 class FlatsController < ApplicationController
   before_action :authenticate_user!
-  efore_action :set_flat, only: [:show]
+  before_action :set_flat, only: [:show]
 
   def index
     @flats = Flat.all
