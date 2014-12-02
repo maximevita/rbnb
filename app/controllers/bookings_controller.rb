@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
   end
 
   def new
+    set_flat
     @booking = Booking.new
   end
 
@@ -33,7 +34,11 @@ class BookingsController < ApplicationController
 private
 
   def booking_params
-    params.require(:booking).permit(:begin_date, :end_date, :request_status, :review, :rating)
+    params.require(:booking).permit(:begin_date, :end_date, :request_status, :review, :rating, :flat_id)
+  end
+
+  def set_flat
+    @flat = Flat.find(params[:flat_id])
   end
 
   def set_booking
