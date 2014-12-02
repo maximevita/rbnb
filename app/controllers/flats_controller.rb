@@ -1,6 +1,6 @@
 class FlatsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_flat, only: [:show]
+  before_action :set_flat, only: [:show, :edit, :update, :destroy]
 
   def index
     @flats = Flat.all
@@ -22,6 +22,22 @@ class FlatsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @flat.update(flat_params)
+      redirect_to flat_path(@flat)
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    @flat.destroy
+    redirect_to flats_path
+  end
+
   private
 
   def set_flat
@@ -29,7 +45,7 @@ class FlatsController < ApplicationController
   end
 
   def flat_params
-    params.require(:flat).permit(:title, :price_per_day, :capacity, :description, :type)
+    params.require(:flat).permit(:title, :price_per_day, :capacity, :description, :housing_type)
   end
 end
 
