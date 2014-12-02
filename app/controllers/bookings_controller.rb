@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   def index
     @bookings = Booking.all
   end
@@ -8,13 +9,16 @@ class BookingsController < ApplicationController
   end
 
   def new
+    set_flat
     @booking = Booking.new
+
   end
 
   def create
+    set_flat
     @booking = current_user.bookings.new(booking_params)
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to flat_bookings_path
     else
       render :new
     end
@@ -33,7 +37,11 @@ class BookingsController < ApplicationController
 private
 
   def booking_params
-    params.require(:booking).permit(:begin_date, :end_date, :request_status, :review, :rating)
+    params.require(:booking).permit(:begin_date, :end_date, :request_status, :review, :rating, :flat_id)
+  end
+
+  def set_flat
+    @flat = Flat.find(params[:flat_id])
   end
 
   def set_booking
