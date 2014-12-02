@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   def index
     @bookings = Booking.all
   end
@@ -10,12 +11,14 @@ class BookingsController < ApplicationController
   def new
     set_flat
     @booking = Booking.new
+
   end
 
   def create
+    set_flat
     @booking = current_user.bookings.new(booking_params)
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to flat_bookings_path
     else
       render :new
     end
