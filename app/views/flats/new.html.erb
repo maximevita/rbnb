@@ -1,16 +1,4 @@
-<h1>Add a flat</h1>
+<h1>Add a flat !</h1>
 </p><br><br>
 
-<%= form_for(@flat) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %><br>
-  <%= f.label :price_per_day %>
-  <%= f.number_field :price_per_day %><br>
-  <%= f.label :capacity %>
-  <%= f.number_field :capacity %><br>
-  <%= f.label :housing_type %>
-  <%= f.text_field :housing_type %><br>
-  <%= f.label :description %>
-  <%= f.text_area :description %><br>
-  <%= f.submit %>
-<% end %>
+<%= render 'flatform' %>
