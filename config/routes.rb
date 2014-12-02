@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "welcomes#index"
 
   resources :flats do
-   resources :bookings, only: [:new, :create, :index]
+   resources :bookings, only: [:new, :create]
    resources :pictures, only: [:new, :create, :destroy]
   end
 

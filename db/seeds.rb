@@ -12,13 +12,13 @@
     password: Faker::Internet.password(8),
     name: Faker::Name.name,
     phone: Faker::PhoneNumber.phone_number,
-    # profile_pic_url: Faker::Avatar.image
+    # TODO profile_pic_url: Faker::Avatar.image
     )
   user.save
 
   2.times do
     flat = Flat.new(
-      title: Faker::Company.catch_phrase,
+      title: Faker::Address.city,
       address: Faker::Address.street_address,
       description: Faker::Company.bs,
       price_per_day: rand(10..100),
