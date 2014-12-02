@@ -1,12 +1,13 @@
 class PicturesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_flat, only: [:create]
+  before_action :set_flat, only: [:create, :new]
 
   def new
+    @picture = @flat.pictures.new
   end
 
   def create
-    @picture = Picture.new(picture_params)
+    @picture = @flat.pictures.new(picture_params)
     if @picture.save
       redirect_to flat_path(@flat)
     else

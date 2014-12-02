@@ -7,8 +7,8 @@
 
 <!-- TODO List all photos -->
 
-<%= @flat.picture.flat_image.url(:medium).each do |img| %>
-  <%= image_tag img %>
+<%= @flat.pictures.each do |pic| %>
+  <%= image_tag pic.flat_image(:medium) %>
 <% end %>
 
 <%= link_to "Book this flat", new_flat_booking_path(@flat) %><br>
