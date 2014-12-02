@@ -1,0 +1,18 @@
+<h1>Update this booking!</h1>
+</p><br><br>
+
+<%= form_for(@booking) do |f| %>
+
+  <!-- TODO: only the owner should be able to see and change this field -->
+  <%= f.label :request_status %>
+  <%= f.text_field :request_status %>
+  <!-- end -->
+  <!-- TODO: only the renter should be able to see and change these fields -->
+  <%= f.label :review %>
+  <%= f.text_field :review %>
+
+  <%= f.label :rating %>
+  <%= f.integer_field :rating %>
+  <!-- end -->
+  <%= f.submit %>
+<% end %>
