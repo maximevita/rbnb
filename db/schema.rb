@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141202105246) do
+ActiveRecord::Schema.define(version: 20141202145644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,10 @@ ActiveRecord::Schema.define(version: 20141202105246) do
     t.integer  "flat_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "flat_image_file_name"
+    t.string   "flat_image_content_type"
+    t.integer  "flat_image_file_size"
+    t.datetime "flat_image_updated_at"
   end
 
   add_index "pictures", ["flat_id"], name: "index_pictures_on_flat_id", using: :btree

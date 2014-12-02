@@ -1,0 +1,7 @@
+<%= form_for([@flat, @picture], html: { multipart: true }) do |f| %>
+  <p>
+    <%= f.label :flat_image %>
+    <%= f.file_field :flat_image %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
