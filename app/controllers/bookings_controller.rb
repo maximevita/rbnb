@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     set_flat
     @booking = current_user.bookings.new(booking_params)
     if @booking.save
-      redirect_to flat_bookings_path
+      redirect_to bookings_path
     else
       render :new
     end
