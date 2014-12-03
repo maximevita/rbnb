@@ -9,6 +9,7 @@ $font-family-sans-serif: "Open sans";
 
 @import "variables";
 @import "bootstrap";
+@import "bootstrap-datepicker3";
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -19,10 +20,21 @@ $font-family-sans-serif: "Open sans";
 @import "registration";
 @import "session";
 
-body {
+body,html {
+  margin:0;
+  padding:0;
+  height:100%;
+}
+
+.wrapper{
+  min-height:100%;
+  position:relative;
   padding-top: 50px;
 }
 
-footer {
-  position: absolute;
+.content{
+  position:relative;
+  padding-bottom:80px;
 }
+
+

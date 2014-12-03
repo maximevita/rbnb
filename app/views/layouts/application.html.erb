@@ -10,15 +10,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="wrapper">
+    <%= render 'layouts/navbar' %>
 
-  <%= render 'layouts/navbar' %>
+    <%= render 'layouts/notices' %>
 
-  <%= render 'layouts/notices' %>
+    <div class='content'>
+      <%= yield %>
+    </div>
 
-  <%= yield %>
+      <%= render 'layouts/footer' %>
 
-  <%= render 'layouts/footer' %>
-
+  </div>
 </body>
 
 
