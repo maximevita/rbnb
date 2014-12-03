@@ -4,10 +4,14 @@
 @import "variables";
 @import "bootstrap";
 
-
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
 @import "navbar";
-@import "footer"
+@import "footer";
+@import "welcomes";
+
+body {
+  padding-top: 30px;
+}
 

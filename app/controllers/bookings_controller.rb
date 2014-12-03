@@ -1,22 +1,26 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :set_flat, only: [:new, :create]
+  before_action :set_booking, only: [:show, :update, :edit]
+
+
   def index
-    @bookings = Booking.all
+    @bookings = current_user.bookings.all
   end
 
   def show
-    set_booking
+    @flat = Flat.find(@booking.flat)
   end
 
   def new
-    set_flat
     @booking = Booking.new
-
   end
 
   def create
-    set_flat
-    @booking = current_user.bookings.new(booking_params)
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.flat = @flat
+
     if @booking.save
       redirect_to bookings_path
     else
@@ -25,11 +29,9 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    set_booking
   end
 
   def update
-    set_booking
     @booking.update(booking_params)
     redirect_to booking_path(@booking)
   end
