@@ -1,4 +1,4 @@
-#wrap-registration {
+#wrap-session {
   background-image: url(House_06.jpg);
   background-size: cover;
   min-height: 800px;
@@ -16,9 +16,11 @@
   padding-top: 10px;
 }
 
-#login-link {
-  color: white;
-  font-weight: 500;
-  padding-top: 0px;
-  padding-bottom: 50px;
+#signin-link {
+  h3{
+    color: white;
+    font-weight: 300;
+    padding-top: 0px;
+    padding-bottom: 50px;
+  }
 }
