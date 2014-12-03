@@ -18,10 +18,21 @@ $font-family-sans-serif: "Open sans";
 @import "footer";
 @import "welcomes";
 
-body {
+body,html {
+  margin:0;
+  padding:0;
+  height:100%;
+}
+
+.wrapper{
+  min-height:100%;
+  position:relative;
   padding-top: 50px;
 }
 
-footer {
-  position: absolute;
+.content{
+  position:relative;
+  padding-bottom:80px;
 }
+
+
