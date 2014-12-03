@@ -19,7 +19,7 @@
   2.times do
     flat = Flat.new(
       title: Faker::Address.city,
-      address: Faker::Address.street_address,
+      address: ['paris', 'berlin', 'madrid', 'london'].sample,
       description: Faker::Company.bs,
       price_per_day: rand(10..100),
       capacity: rand(1..5),

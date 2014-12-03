@@ -6,6 +6,10 @@ class FlatsController < ApplicationController
     @flats = Flat.all
   end
 
+  def search
+    @flats = Flat.where({address: search_params[:address]})
+  end
+
   def show
   end
 
@@ -46,6 +50,10 @@ class FlatsController < ApplicationController
 
   def flat_params
     params.require(:flat).permit(:title, :price_per_day, :capacity, :description, :housing_type)
+  end
+
+  def search_params
+    params.permit(:address, :start, :end, :people)
   end
 end
 

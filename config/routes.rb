@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "welcomes#index"
 
+  get "search", to: "flats#search"
+
   resources :flats do
    resources :bookings, only: [:new, :create]
    resources :pictures, only: [:new, :create, :destroy]
