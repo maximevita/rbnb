@@ -1,4 +1,41 @@
 <div id='bck-image'>
   <h1 class="text-center">WELCOME HOME</h1> <br>
-  <p class="text-center"><%= link_to "See all flats", flats_path %></p> <br>
+  <form class="form-inline text-center" role="form" action="<%= flats_path %>" method="GET">
+    <div class="form-group">
+      <div class="input-group">
+        <!-- <label class="hidden" for="Tripdestination">Trip destination</label> -->
+        <input type="text" class="form-control" id="Tripdestination" placeholder="Où voulez-vous aller ?">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+        <label class="sr-only sl-only" for="Begindate">Begin date</label>
+        <input type="date" class="form-control" id="Begindate" value="Arrivée">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+        <label class="sr-only" for="Enddate">End date</label>
+        <input type="date" class="form-control" id="Enddate" value="Départ">
+      </div>
+    </div>
+    <div class="form-group">
+      <select class="form-control">
+        <option>1 voyageur</option>
+        <option>2 voyageurs</option>
+        <option>3 voyageurs</option>
+        <option>4 voyageurs</option>
+        <option>5 voyageurs</option>
+        <option>6 voyageurs</option>
+        <option>7 voyageurs</option>
+        <option>8 voyageurs</option>
+        <option>9 voyageurs</option>
+        <option>10 voyageurs</option>
+        <option>10+ voyageurs</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-danger">Rechercher</button>
+  </form>
 </div>
+
+
