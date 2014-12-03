@@ -1,4 +1,19 @@
 <h1><%= @flat.title %></h1>
+<div class="text-center">
+  <% if @flat.pictures != [] %>
+    <%= @flat.pictures.each do |pic| %>
+      <%= image_tag pic.flat_image(:medium) %>
+    <% end %>
+  <% else %>
+    <img src="http://lorempixel.com/640/480/city/" alt="Random city picture">
+  <% end %>
+
+
+<!-- For the renter only -->
+<p><%= link_to "Book this flat", new_flat_booking_path(@flat), class: 'bookingBtn'%></p>
+
+<!-- end -->
+<p>    </p>
 <p>Street address: <%= @flat.address %></p>
 <p>Price: <%= @flat.price_per_day %> € / day</p>
 <p>Housing type: <%= @flat.housing_type %></p>
@@ -6,22 +21,15 @@
 <p>Description: <%= @flat.description %></p>
 
 <!-- TODO List all photos -->
-
-<% if @flat.pictures != [] %>
-  <%= @flat.pictures.each do |pic| %>
-    <%= image_tag pic.flat_image(:medium) %>
-  <% end %>
-<% else %>
-  <p><%= link_to 'Ask the owner to upload some pictures!', flats_path %></p>
-  <!-- TODO link to user profile -->
-<% end %>
-
+</div>
 <ul>
-<li><%= link_to "Book this flat", new_flat_booking_path(@flat) %></li>
-
+<!-- For the owner only -->
 <li><%= link_to "Add a picture for the flat", new_flat_picture_path(@flat) %></li>
 <li><%= link_to "Edit the flat", edit_flat_path(@flat) %></li>
-<li><%= link_to "Back to all flats", flats_path %></li>
 <li><%= link_to "Delete this flat", flat_path(@flat), method: :delete,
 data:{ confirm: "Are you sure?" } %></li>
+<!-- end -->
+<!-- shared between owner and renter -->
+<li><%= link_to "Back to all flats", flats_path %></li>
+<!-- end -->
 </ul>

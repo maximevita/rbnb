@@ -38,3 +38,26 @@ body,html {
 }
 
 
+.bookingBtn{
+  background: #ff6531;
+  position:relative;
+  color:white;
+  display: inline-block;
+  padding: 10px 15px 10px 15px;
+  border-bottom: 3px solid #b6471f;
+  border-radius:3px;
+  transition: background-color 0.4s ease;
+
+  &:hover{
+    color:white;
+    text-decoration: none;
+    background-color:#ff8337;
+  }
+
+  &:active{
+    top: 2px;
+    border-bottom: 3px solid transparent;
+
+  }
+}
+

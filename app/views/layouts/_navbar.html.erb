@@ -16,8 +16,18 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to user_session_path do %>
+              <%= current_user.email %>
+            <% end %>
+        </li>
+        <% else %>
+          <li><%= link_to 'Sign up', new_user_registration_path %></li>
+          <li><%= link_to 'Sign in', new_user_session_path %></li>
+        <% end %>
         <li>
-          <%= link_to "/users/1/messages" do %>
+          <%= link_to "#" do %>
             <i class="fa fa-envelope-o"></i> Messages
           <% end %>
         </li>
