@@ -18,6 +18,9 @@ $font-family-sans-serif: "Open sans";
 @import "welcomes";
 
 body {
-  padding-top: 30px;
+  padding-top: 50px;
 }
 
+footer {
+  position: absolute;
+}
