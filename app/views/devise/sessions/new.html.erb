@@ -4,8 +4,8 @@
     <div class="row">
       <div class="col-xs-9">
         <div id="log-in">
-          <h2>Log in</h2>
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-horizontal", role: "form", id: "formsize"}) do |f| %>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {role: "form", id: "formsize"}) do |f| %>
+            <h2>Log in</h2>
             <div class="form-group">
               <%= f.label :email, class: "sr-only" %>
               <div class="input-group">

@@ -1,9 +1,1 @@
-<%= link_to "publish an announce", new_flat_path %>
-<ul>
-  <% @flats.each do |flat| %>
-    <li>
-      <h2><%= link_to flat.title, flat_path(flat) %></h2>
-    </li>
-    <!-- TODO flat picture -->
-  <% end %>
-</ul>
+<%= render 'listingflats' %>

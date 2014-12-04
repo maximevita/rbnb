@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   before_action :set_flat, only: [:new, :create]
+  before_action :set_user, only: [:new, :create, :edit]
   before_action :set_booking, only: [:show, :update, :edit]
 
 
@@ -18,7 +19,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = current_user
+    @booking.user = @user
     @booking.flat = @flat
 
     if @booking.valid?
@@ -46,6 +47,10 @@ private
 
   def set_flat
     @flat = Flat.find(params[:flat_id])
+  end
+
+  def set_user
+    @user = current_user
   end
 
   def set_booking

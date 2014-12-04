@@ -1,19 +1,28 @@
-<h1>Update this booking!</h1>
+<% if @booking.flat.user == @user %>
+  <h1>Please accept or decline this booking!</h1>
+<% end %>
+<% if @booking.user == @user %>
+  <h1>Rate your stay !</h1>
+<% end %>
 </p><br>
 
 <%= form_for(@booking) do |f| %>
 
-  <!-- TODO: only the owner should be able to see and change this field -->
-  <%= f.label :request_status %>
-  <%= f.select :request_status, options_for_select([['Accept', 'Accepted'], ['Decline', 'Declined']]) %><br>
-  <!-- end -->
-  <!-- TODO: only the renter should be able to see and change these fields -->
-  <%= f.label :rating %>
-  <%= f.number_field :rating %>
-  <br>
-  <%= f.label :review %>
-  <%= f.text_area :review %>
-  <br>
-  <!-- end -->
+  <!-- only the owner should be able to see and change this field -->
+  <% if @booking.flat.user == @user %>
+    <%= f.label :request_status %>
+    <%= f.select :request_status, options_for_select([['Accept', 'Accepted'], ['Decline', 'Declined']]) %><br>
+  <% end %>
+
+  <!-- only the renter should be able to see and change these fields -->
+  <% if @booking.user == @user %>
+    <%= f.label :rating %>
+    <%= f.number_field :rating %>
+    <br>
+    <%= f.label :review %>
+    <%= f.text_area :review %>
+    <br>
+  <% end %>
+
   <%= f.submit %>
 <% end %>
