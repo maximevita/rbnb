@@ -1,5 +1,10 @@
 <p>booking#show</p>
 <p>You booked <%= link_to @flat.title, flat_path(@booking.flat) %> from the <strong><%= @booking.begin_date %></strong> to the <strong><%= @booking.end_date %></strong> </p>
-<p>The request status is currently: <%= @booking.request_status %></p>
-<p>Add a review for this booking TODO FORM <%= @booking.review %></p>
-<p>Add a rating for this booking TODO FORM<%= @booking.rating %></p
+<p>The request status is currently: <strong><%= @booking.request_status %></strong></p>
+
+<p><%= link_to "Rate and review your booking", edit_booking_path(@booking) %></p>
+
+<p>Rating: <%= @booking.rating %> stars</p>
+<p>Review for this booking: <%= @booking.review %></p>
+
+<p><%= link_to "My bookings", bookings_path %></p>
