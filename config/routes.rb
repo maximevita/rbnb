@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get "search", to: "flats#search"
   get "myflats", to: "flats#myflats"
+  get "profile", to: "users#show"
 
   resources :flats do
    resources :bookings, only: [:new, :create]
