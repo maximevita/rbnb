@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "welcomes#index"
 
   get "search", to: "flats#search"
+  get "myflats", to: "flats#myflats"
 
   resources :flats do
    resources :bookings, only: [:new, :create]
