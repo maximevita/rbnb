@@ -21,11 +21,12 @@
 <p>Housing type: <%= @flat.housing_type %></p>
 <p>Up to <%= @flat.capacity %> persons</p>
 <p>Description: <%= @flat.description %></p>
-
-<!-- TODO List all photos -->
 </div>
-<ul>
+<!-- TODO List all photos -->
+
+
 <!-- For the owner only -->
+<ul>
 <% if @flat.user == current_user %>
   <li><%= link_to "Add a picture for the flat", new_flat_picture_path(@flat) %></li>
   <li><%= link_to "Edit the flat", edit_flat_path(@flat) %></li>
