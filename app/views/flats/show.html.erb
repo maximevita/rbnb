@@ -27,11 +27,13 @@
 
 <!-- For the owner only -->
 <ul>
-<% if @flat.user == current_user %>
-  <li><%= link_to "Add a picture for the flat", new_flat_picture_path(@flat) %></li>
-  <li><%= link_to "Edit the flat", edit_flat_path(@flat) %></li>
-  <li><%= link_to "Delete this flat", flat_path(@flat), method: :delete,
-  data:{ confirm: "Are you sure?" } %></li>
+<% if user_signed_in? %>
+  <% if @flat.user == current_user %>
+    <li><%= link_to "Add a picture for the flat", new_flat_picture_path(@flat) %></li>
+    <li><%= link_to "Edit the flat", edit_flat_path(@flat) %></li>
+    <li><%= link_to "Delete this flat", flat_path(@flat), method: :delete,
+    data:{ confirm: "Are you sure?" } %></li>
+  <% end %>
 <% end %>
 <!-- shared between owner and renter -->
 <li><%= link_to "Back to all flats", flats_path %></li>
