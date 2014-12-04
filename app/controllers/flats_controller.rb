@@ -16,12 +16,11 @@ class FlatsController < ApplicationController
   end
 
   def new
-    @flat = Flat.new
+    @flat = @user.flats.new
   end
 
   def create
-    @flat = Flat.new(flat_params)
-    raise
+    @flat = @user.flats.new(flat_params)
     if @flat.save
       redirect_to flat_path(@flat)
     else
@@ -63,7 +62,7 @@ class FlatsController < ApplicationController
   end
 
   def flat_params
-    params.require(:flat).permit(:title, :price_per_day, :capacity, :description, :housing_type, :user)
+    params.require(:flat).permit(:title, :price_per_day, :capacity, :description, :housing_type)
   end
 
   def search_params
