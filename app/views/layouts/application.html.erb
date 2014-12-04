@@ -11,15 +11,15 @@
 </head>
 <body>
   <div class="wrapper">
+
     <%= render 'layouts/navbar' %>
 
-    <%= render 'layouts/notices' %>
-
     <div class='content'>
+      <%= render 'layouts/notices' %>
       <%= yield %>
     </div>
 
-      <%= render 'layouts/footer' %>
+    <%= render 'layouts/footer' %>
 
   </div>
 </body>
