@@ -1,16 +1,19 @@
 <div class="container">
   <div class="row">
     <ul class="list-unstyled">
-      <% @flats.each do |flat| %>
+      <% if @flats != [] %>
+        <% @flats.each do |flat| %>
         <li>
           <div class="col-xs-12 col-sm-4 text-center">
             <h3><%= link_to flat.title, flat_path(flat) %></h3>
             <p><%= flat.price_per_day %> € / day</p>
-            <%= link_to flat_path(flat) do %>
-              <!-- TODO: flat picture -->
-            <% end %>
-          </div>
-        </li>
+            <%= link_to flat_path(flat) %>
+          </li>
+          <% end %>
+      <% else %>
+        <p>No flats to display!</p> %>
+      <% end %>
+      </div>
       <% end %>
     </ul>
   </div>
