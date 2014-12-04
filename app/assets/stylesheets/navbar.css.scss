@@ -88,13 +88,20 @@ $btn-margin-top: ($height + 2 * $vertical-padding - $btn-height - $btn-top-borde
   border-right: $btn-right-border-width solid $btn-right-border-color;
   border-bottom: $btn-bottom-border-width solid $btn-bottom-border-color;
   border-left: $btn-left-border-width solid $btn-left-border-color;
-  font-size: 12px;
+  font-size: 14px;
+  color: white;
+  font-weight: 300;
   &.signup{
     margin-right: 20px;
     padding: 0 20px;
+    background: #62A0F0;
   }
   &.login{
     padding: 0 20px;
+    background: #62A0F0;
+  }
+  &.add-a-flat{
+    background: #D9534F;
   }
 }
 
