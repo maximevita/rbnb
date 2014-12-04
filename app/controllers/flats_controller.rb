@@ -1,7 +1,7 @@
 class FlatsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_flat, only: [:show, :edit, :update, :destroy]
-  before_action :check_ownership, only: [:new, :edit, :update, :destroy]
+  before_action :check_ownership, only: [:edit, :update, :destroy]
 
   def index
     @flats = Flat.all
@@ -47,8 +47,8 @@ class FlatsController < ApplicationController
 
   def check_ownership
     unless @flat.user == current_user
-      flash[:notice] = "You are not the flat owner !"
-      render "show"
+      flash[:notice] = "You are not the flat owner ! You can't edit it."
+      render :show
     end
   end
 
