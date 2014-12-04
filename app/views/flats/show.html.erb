@@ -1,4 +1,4 @@
-<h1><%= @flat.title %></h1>
+<h1 class ="text-center"><%= @flat.title %></h1>
 <div class="text-center">
   <% if @flat.pictures != [] %>
     <% @flat.pictures.each do |pic| %>
@@ -26,16 +26,27 @@
 
 
 <!-- For the owner only -->
-<ul>
-<% if user_signed_in? %>
-  <% if @flat.user == current_user %>
-    <li><%= link_to "Add a picture for the flat", new_flat_picture_path(@flat) %></li>
-    <li><%= link_to "Edit the flat", edit_flat_path(@flat) %></li>
-    <li><%= link_to "Delete this flat", flat_path(@flat), method: :delete,
-    data:{ confirm: "Are you sure?" } %></li>
-  <% end %>
-<% end %>
-<!-- shared between owner and renter -->
-<li><%= link_to "Back to all flats", flats_path %></li>
-<!-- end -->
-</ul>
+<div class="container">
+  <div class="row">
+    <ul class="text-center list-unstyled">
+      <% if user_signed_in? %>
+        <% if @flat.user == current_user %>
+          <div class="col-xs-12 col-sm-6">
+            <li class="btn btn-default"><%= link_to "Add a picture for the flat", new_flat_picture_path(@flat) %></li>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <li class="btn btn-default"><%= link_to "Edit the flat", edit_flat_path(@flat) %></li>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <li class="btn btn-default"><%= link_to "Delete this flat", flat_path(@flat), method: :delete,
+          data:{ confirm: "Are you sure?" } %></li>
+          </div>
+        <% end %>
+      <% end %>
+      <!-- shared between owner and renter -->
+      <div class="col-xs-12 col-sm-6">
+        <li class="btn btn-default"><%= link_to "Back to all flats", flats_path %></li>
+      </div>
+    </ul>
+  </div>
+</div>
