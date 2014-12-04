@@ -1,0 +1,49 @@
+<ul class="list-unstyled">
+  <li>
+    <div class="panel panel-default" id="email-profile">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-envelope"></i> Email</h3>
+      </div>
+      <div class="panel-body">
+        <%= @user.email %>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="panel panel-default" id="info-profile">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-lock"></i> Password</h3>
+      </div>
+      <div class="panel-body">
+        *************
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="panel panel-default" id="info-profile">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-male"></i> Name</h3>
+      </div>
+      <div class="panel-body">
+        <%= @user.name %>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="panel panel-default" id="info-profile">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-phone"></i> Phone</h3>
+      </div>
+      <div class="panel-body">
+        <%= @user.phone %>
+      </div>
+    </div>
+  </li>
+  <li>
+    <div id="info-profile">
+      <%= link_to user_session_path do %>
+        <button type="button" class="btn btn-danger">Update your infos</button>
+      <% end %>
+    </div>
+  </li>
+</ul>
