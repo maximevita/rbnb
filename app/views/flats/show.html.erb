@@ -2,10 +2,10 @@
 <div class="text-center">
   <% if @flat.pictures != [] %>
     <% @flat.pictures.each do |pic| %>
-      <%= image_tag pic.flat_image(:medium) %>
+      <%= image_tag pic.flat_image(:medium) unless pic.seed_picture_url %>
+      <%= image_tag pic.seed_picture_url unless nil %>
     <% end %>
   <% else %>
-    <img src="http://lorempixel.com/640/480/city/" alt="Random city picture">
   <% end %>
 
 
