@@ -1,7 +1,7 @@
 class FlatsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_flat, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:new, :create]
+  before_action :set_user, only: [:new, :create, :myflats]
   before_action :check_ownership, only: [:edit, :update, :destroy]
 
   def index
@@ -10,6 +10,10 @@ class FlatsController < ApplicationController
 
   def search
     @flats = Flat.where({address: search_params[:address]})
+  end
+
+  def myflats
+    @flats = @user.flats
   end
 
   def show
