@@ -10,9 +10,11 @@
 
 
 <!-- For the renter only -->
-<p><%= link_to "Book this flat", new_flat_booking_path(@flat), class: 'bookingBtn'%></p>
+<% unless @flat.user == current_user %>
+  <p>    </p>
+  <p><%= link_to "Book this flat", new_flat_booking_path(@flat), class: 'bookingBtn'%></p>
+<% end %>
 
-<!-- end -->
 <p>    </p>
 <p>Street address: <%= @flat.address %></p>
 <p>Price: <%= @flat.price_per_day %> € / day</p>
@@ -24,11 +26,12 @@
 </div>
 <ul>
 <!-- For the owner only -->
-<li><%= link_to "Add a picture for the flat", new_flat_picture_path(@flat) %></li>
-<li><%= link_to "Edit the flat", edit_flat_path(@flat) %></li>
-<li><%= link_to "Delete this flat", flat_path(@flat), method: :delete,
-data:{ confirm: "Are you sure?" } %></li>
-<!-- end -->
+<% if @flat.user == current_user %>
+  <li><%= link_to "Add a picture for the flat", new_flat_picture_path(@flat) %></li>
+  <li><%= link_to "Edit the flat", edit_flat_path(@flat) %></li>
+  <li><%= link_to "Delete this flat", flat_path(@flat), method: :delete,
+  data:{ confirm: "Are you sure?" } %></li>
+<% end %>
 <!-- shared between owner and renter -->
 <li><%= link_to "Back to all flats", flats_path %></li>
 <!-- end -->
