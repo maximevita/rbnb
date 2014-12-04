@@ -15,8 +15,8 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    @booking.begin_date = Date.strptime(session[:search_dates]['begin_date'], '%d/%m/%y')
-    @booking.end_date = Date.strptime(session[:search_dates]['end_date'], '%d/%m/%y')
+    @booking.begin_date = Date.strptime(session[:search_dates]['begin_date'], '%d/%m/%y') unless session[:search_dates]['begin_date'] == nil
+    @booking.end_date = Date.strptime(session[:search_dates]['end_date'], '%d/%m/%y') unless session[:search_dates]['end_date'] == nil
   end
 
   def create
