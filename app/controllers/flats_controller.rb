@@ -9,7 +9,9 @@ class FlatsController < ApplicationController
   end
 
   def search
-    @flats = Flat.where({address: search_params[:address]})
+    @flats = Flat.where(address: search_params[:address])
+    search_dates = {begin_date: params[:start], end_date: params[:end]}
+    session[:search_dates] = search_dates
   end
 
   def show
