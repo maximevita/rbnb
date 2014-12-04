@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(version: 20141204141047) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "seed_picture"
   end
 
   add_index "flats", ["user_id"], name: "index_flats_on_user_id", using: :btree

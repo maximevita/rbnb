@@ -9,18 +9,18 @@
   <% end %>
 
 
-<!-- For the renter only -->
-<% unless @flat.user == current_user %>
-  <p>    </p>
-  <p><%= link_to "Book this flat", new_flat_booking_path(@flat), class: 'bookingBtn'%></p>
-<% end %>
+  <!-- For the renter only -->
+  <% unless @flat.user == current_user %>
+    <p>    </p>
+    <p><%= link_to "Book this flat", new_flat_booking_path(@flat), class: 'bookingBtn'%></p>
+  <% end %>
 
-<p>    </p>
-<p>Street address: <%= @flat.address %></p>
-<p>Price: <%= @flat.price_per_day %> € / day</p>
-<p>Housing type: <%= @flat.housing_type %></p>
-<p>Up to <%= @flat.capacity %> persons</p>
-<p>Description: <%= @flat.description %></p>
+  <p>    </p>
+  <p>Street address: <%= @flat.address %></p>
+  <p>Price: <%= @flat.price_per_day %> € / day</p>
+  <p>Housing type: <%= @flat.housing_type %></p>
+  <p>Up to <%= @flat.capacity %> persons</p>
+  <p>Description: <%= @flat.description %></p>
 </div>
 <!-- TODO List all photos -->
 
