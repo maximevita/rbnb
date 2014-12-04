@@ -1,7 +1,9 @@
 <h1>Book <%= link_to @flat.title, flat_path(@flat) %>!</h1>
 </p><br><br>
 
-<p>Total price for <%= stay_length = (@booking.end_date - @booking.begin_date).to_i%> days : <%= (@flat.price_per_day*stay_length).to_i %> € </p>
+<% unless @booking.end_date == nil || @booking.begin_date == nil %>
+  <p>Total price for <%= stay_length = (@booking.end_date - @booking.begin_date).to_i%> days : <%= (@flat.price_per_day*stay_length).to_i %> € </p>
+<% end %>
 <br>
 <%= form_for([ @flat, @booking ]) do |f| %>
   <%= f.label :begin_date %>
