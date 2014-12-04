@@ -8,12 +8,14 @@
             <h3><%= link_to flat.title, flat_path(flat) %></h3>
             <p><%= flat.price_per_day %> € / day</p>
             <%= link_to flat_path(flat) %>
+          </div>
           </li>
           <% end %>
       <% else %>
-        <p>No flats to display!</p> %>
-      <% end %>
-      </div>
+        <div class="col-xs-12 text-center">
+          <h3>No flats to display!</h3>
+          <li><%= link_to 'Add your flat!', new_flat_path, class: "btn btn-primary", id: "nav-btn", class: "add-a-flat" %></li>
+        </div>
       <% end %>
     </ul>
   </div>
