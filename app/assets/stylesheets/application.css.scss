@@ -62,3 +62,22 @@ body,html {
   }
 }
 
+.alert-info {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  font-size: 1.5em;
+  color: #31708f;
+  margin: 30px auto 10px auto;
+  width: 500px;
+  text-align: center;
+}
+
+.alert-warning {
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  font-size: 1.5em;
+  color: #31708f;
+  margin: 30px auto 10px auto;
+  width: 500px;
+  text-align: center;
+}
