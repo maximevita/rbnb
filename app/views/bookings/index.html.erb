@@ -1,10 +1,8 @@
 <p>My bookings</p>
 
 <% @bookings.each do |booking| %>
-  From <p><%= booking.begin_date %></p>
-  To <p><%= booking.end_date %></p>
+  <p> From the <%= booking.begin_date %></p>
+  <p> To the <%= booking.end_date %></p>
   <p><%= booking.request_status %></p>
-  <p><%= booking.review %></p>
-  <p><%= booking.rating %></p>
   <p><%= link_to "See this booking", booking_path(booking)%></p>
 <% end %>
