@@ -1,7 +1,7 @@
 <h1><%= @flat.title %></h1>
 <div class="text-center">
   <% if @flat.pictures != [] %>
-    <%= @flat.pictures.each do |pic| %>
+    <% @flat.pictures.each do |pic| %>
       <%= image_tag pic.flat_image(:medium) %>
     <% end %>
   <% else %>
