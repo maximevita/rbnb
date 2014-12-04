@@ -29,8 +29,7 @@ $profile-border-width: 2px;
 
 
 
-// And do not look at what follows!
-// This is why we use sass :)
+
 .navbar-wagon{
   background: $bg;
   border: none;
@@ -90,6 +89,13 @@ $btn-margin-top: ($height + 2 * $vertical-padding - $btn-height - $btn-top-borde
   border-bottom: $btn-bottom-border-width solid $btn-bottom-border-color;
   border-left: $btn-left-border-width solid $btn-left-border-color;
   font-size: 12px;
+  &.signup{
+    margin-right: 20px;
+    padding: 0 20px;
+  }
+  &.login{
+    padding: 0 20px;
+  }
 }
 
 
