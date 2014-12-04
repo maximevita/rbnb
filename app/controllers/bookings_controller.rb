@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   before_action :set_flat, only: [:new, :create]
-  before_action :set_user, only: [:new, :create]
+  before_action :set_user, only: [:new, :create, :edit]
   before_action :set_booking, only: [:show, :update, :edit]
 
 
