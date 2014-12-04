@@ -2,7 +2,7 @@
   background-image: image-url('House_06.jpg');
   background-size: cover;
   min-height: 800px;
-  padding-top: 200px;
+  padding-top: 80px;
   padding-bottom: 200px;
   h2{
     color: white;
@@ -12,9 +12,16 @@
   }
 }
 
+#formsize {
+  width: 500px;
+  padding-left: 17px;
+}
+
 .actions {
   padding-top: 10px;
+  padding-left: 0px;
 }
+
 
 #login-link {
   color: white;
