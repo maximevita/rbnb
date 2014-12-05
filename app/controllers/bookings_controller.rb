@@ -6,7 +6,11 @@ class BookingsController < ApplicationController
 
 
   def index
+    @requests = []
     @bookings = current_user.bookings.all
+    current_user.flats.each do |flat|
+      flat.bookings.each { |booking| @requests << booking }
+    end
   end
 
   def show
@@ -15,8 +19,8 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    @booking.begin_date = Date.strptime(session[:search_dates]['begin_date'], '%d/%m/%y') unless session[:search_dates]['begin_date'] == nil
-    @booking.end_date = Date.strptime(session[:search_dates]['end_date'], '%d/%m/%y') unless session[:search_dates]['end_date'] == nil
+    @booking.begin_date = Date.strptime(session[:search_dates]['begin_date'], '%d/%m/%y') unless session[:search_dates]['begin_date'].empty?
+    @booking.end_date = Date.strptime(session[:search_dates]['end_date'], '%d/%m/%y') unless session[:search_dates]['end_date'].empty?
   end
 
   def create
@@ -27,6 +31,8 @@ class BookingsController < ApplicationController
     if @booking.valid?
       @booking.request_status = "Pending"
       @booking.save
+      # send a notification to the flat owner
+      # notify_owner unless owner == current_user
       redirect_to booking_path(@booking)
     else
       render :new
@@ -34,6 +40,12 @@ class BookingsController < ApplicationController
   end
 
   def edit
+  end
+
+  def notify_owner
+    # alert flat owner
+    # owner = @flat.user
+    # list the booking in the owner's bokking requests
   end
 
   def update
