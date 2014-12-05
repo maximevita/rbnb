@@ -1,16 +1,33 @@
-<h2>Forgot your password?</h2>
+<div id='wrap-passwords'>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-9">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+        <div id="forgot-pw">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, id: "pwformsize" }) do |f| %>
+            <%= devise_error_messages! %>
+            <h2>Forgot your password?</h2>
+            <h3>No worries</h3>
+            <h4>Please enter your mail</h4>
+            <div class="form-group">
+              <%= f.label :email, class: "sr-only" %>
+              <div class="input-group">
+                <div class="input-group-addon">@</div>
+                <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: 'Email' %>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button type="submit" class="btn btn-default">Send my password</button>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="col-xs-3">
+      </div>
+
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
