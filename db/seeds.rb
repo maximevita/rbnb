@@ -28,7 +28,7 @@
 
     picture = Picture.new(
       flat_id: flat.id,
-      seed_picture_url: 'http://lorempixel.com/640/480/city/'
+      seed_picture_url: 'http://lorempixel.com/250/250/city/'
       )
     picture.save
   end
