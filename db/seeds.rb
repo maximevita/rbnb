@@ -20,7 +20,7 @@
     address: ['Paris', 'Berlin', 'Madrid', 'London', 'Rome'].sample,
     description: Faker::Lorem.paragraph,
     price_per_day: rand(10..100),
-    capacity: rand(1..5),
+    capacity: rand(1..11),
     housing_type: ['Flat', 'House', 'Castle'].sample,
     user_id: user.id
   )
