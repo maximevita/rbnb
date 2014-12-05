@@ -56,7 +56,6 @@
         'http://upload.wikimedia.org/wikipedia/commons/1/12/Pittock_Mansion_(north_side).jpg',
         'http://2.bp.blogspot.com/_8355ZAyQQLI/TOsKaLi4LqI/AAAAAAAAABE/ZCLi5koGiV8/s1600/Faith+house+on+fire+003.jpg',
         'http://vinviral.com/wp-content/uploads/2014/07/fire.jpg',
-        'http://www.fond-ecran-image.com/voir.php?photo=galerie-membre/france-haute-loire/chateau-de-leotoing-1.jpg',
         'http://leroannais.com/wp-content/uploads/noesit/medias/202133/sitrapcu394717-188521-chateau-de-la-roche-copie.jpg',
         'http://www.photo-evasion.com/images/photo_chateau_loire_blois_aile_louis_xii_gothique_410.jpg',
         'http://www.traveltour.fr/sites/default/files/imagecache/ci_gallery/val%20de%20loire%20ch%C3%A2teau%20de%20chenonceau%20vue.jpg',
