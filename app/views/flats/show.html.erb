@@ -1,19 +1,20 @@
-<div class="container">
-  <div class="row quite-margin-top-bottom">
-    <div class="col-xs-12 col-sm-6">
-      <h1 class ="text-center"><%= @flat.title %></h1>
-      <br><br>
-      <div class="text-center">
-        <% if @flat.pictures != [] %>
-          <% @flat.pictures.each do |pic| %>
-            <%= image_tag pic.flat_image(:medium) unless pic.seed_picture_url %>
-            <%= image_tag pic.seed_picture_url unless nil %>
+<div id='wrap-that-flat'>
+  <div class="container">
+    <div class="row quite-margin-top-bottom">
+      <div class="col-xs-12 col-sm-6">
+        <h1 class ="text-center"><%= @flat.title %></h1>
+        <br><br>
+        <div class="text-center">
+          <% if @flat.pictures != [] %>
+            <% @flat.pictures.each do |pic| %>
+              <%= image_tag pic.flat_image(:medium), size: "350" unless pic.seed_picture_url %>
+              <%= image_tag pic.seed_picture_url, size: "350" unless nil %>
+            <% end %>
+          <% else %>
+            <%= image_tag "http://ikonal.com/wp-content/uploads/2011/08/maisons-bizarres-186753.jpg", size: "350" %>
           <% end %>
-        <% else %>
-          <%= image_tag "http://ikonal.com/wp-content/uploads/2011/08/maisons-bizarres-186753.jpg", size: "250" %>
-        <% end %>
+        </div>
       </div>
-    </div>
 
     <div class="col-xs-12 col-sm-6 go-quite-down">
         <!-- For the renter only -->
@@ -25,40 +26,41 @@
           </div>
         <% end %>
 
-        <div id="flat-infos-in-flat-view">
-          <p>    </p>
-          <p>Address: <strong><%= @flat.address %></strong></p>
-          <p>Price: <strong><%= @flat.price_per_day %></strong> € / day</p>
-          <p>Housing type: <strong><%= @flat.housing_type %></strong></p>
-          <p>Up to <strong><%= @flat.capacity %></strong> persons</p>
-          <p>Description: <strong><%= @flat.description %></strong></p>
-        </div>
-      <!-- TODO List all photos -->
+          <div id="flat-infos-in-flat-view">
+            <p>    </p>
+            <p>Address: <strong><%= @flat.address %></strong></p>
+            <p>Price: <strong><%= @flat.price_per_day %></strong> € / day</p>
+            <p>Housing type: <strong><%= @flat.housing_type %></strong></p>
+            <p>Up to <strong><%= @flat.capacity %></strong> persons</p>
+            <p>Description: <strong><%= @flat.description %></strong></p>
+          </div>
+        <!-- TODO List all photos -->
 
 
-      <!-- For the owner only -->
-      <div class="container">
-        <div class="row">
-          <!-- <ul class="text-center list-unstyled"> -->
-            <% if user_signed_in? %>
-              <% if @flat.user == current_user %>
-                <div class="col-xs-12 col-sm-6 margin-btn">
-                  <%= link_to "Add a picture for the flat", new_flat_picture_path(@flat), class: "btn btn-default" %>
-                </div>
-                <div class="col-xs-12 col-sm-6 margin-btn">
-                  <%= link_to "Edit the flat", edit_flat_path(@flat), class: "btn btn-default" %>
-                </div>
-                <div class="col-xs-12 col-sm-6 margin-btn">
-                  <%= link_to "Delete this flat", flat_path(@flat), method: :delete,
-                    data:{ confirm: "Are you sure?" }, class: "btn btn-default" %>
-                </div>
+        <!-- For the owner only -->
+        <div class="container">
+          <div class="row">
+            <!-- <ul class="text-center list-unstyled"> -->
+              <% if user_signed_in? %>
+                <% if @flat.user == current_user %>
+                  <div class="col-xs-12 col-sm-6 margin-btn">
+                    <%= link_to "Add a picture for the flat", new_flat_picture_path(@flat), class: "btn btn-default" %>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 margin-btn">
+                    <%= link_to "Edit the flat", edit_flat_path(@flat), class: "btn btn-default" %>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 margin-btn">
+                    <%= link_to "Delete this flat", flat_path(@flat), method: :delete,
+                      data:{ confirm: "Are you sure?" }, class: "btn btn-default" %>
+                  </div>
+                <% end %>
               <% end %>
-            <% end %>
-            <!-- shared between owner and renter -->
-            <div class="col-xs-12 col-sm-6 margin-btn">
-              <%= link_to "Back to all flats", flats_path, class: "btn btn-default" %>
-            </div>
-          <!-- </ul> -->
+              <!-- shared between owner and renter -->
+              <div class="col-xs-12 col-sm-6 margin-btn">
+                <%= link_to "Back to all flats", flats_path, class: "btn btn-default" %>
+              </div>
+            <!-- </ul> -->
+          </div>
         </div>
       </div>
     </div>
