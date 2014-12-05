@@ -18,8 +18,11 @@
     <div class="col-xs-12 col-sm-6 go-quite-down">
         <!-- For the renter only -->
         <% unless @flat.user == current_user %>
-          <p></p>
-          <p><%= link_to "Book this flat", new_flat_booking_path(@flat), class: 'bookingBtn'%></p>
+          <div id="margin-btn-booking">
+            <p>
+              <%= link_to "Book this flat", new_flat_booking_path(@flat), class: 'bookingBtn'%>
+            </p>
+          </div>
         <% end %>
 
         <div id="flat-infos-in-flat-view">
