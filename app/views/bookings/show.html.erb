@@ -16,10 +16,10 @@
                   <% end %>
                 <!-- shared between owner and renter -->
                 <div class="col-xs-12 col-sm-6 margin-btn">
-                  <%= link_to "Back to requests and bookings", bookings_path, class: "btn btn-default" %>
                     <p>The request status is currently: <strong><%= @booking.request_status %></strong></p>
                     <p>Rating: <%= @booking.rating %> stars</p>
                     <p>Review for this booking: <%= @booking.review %></p>
+                  <%= link_to "Back to requests and bookings", bookings_path, class: "btn btn-default" %>
                 </div>
               <!-- </ul> -->
             </div>
