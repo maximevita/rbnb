@@ -1,27 +1,20 @@
-#wrap-passwords {
-  background-image: image-url('Another_sky.jpeg');;
+#wrap-new-flat{
+  background-image: image-url('CC_blue_sky.jpg');;
   background-size: cover;
   min-height: 650px;
   padding-top: 80px;
   padding-bottom: 200px;
-  h2 {
+  h1 {
     color: white;
     font-size: 30px;
     font-weight: 500;
     padding-top: 0px;
     padding-bottom: 20px;
-  }
-  h3, h4 {
-    color: white;
-    font-size: 25px;
-    font-weight: 500;
-    padding-top: 0px;
-    padding-bottom: 20px;
+    padding-left: 230px;
   }
 }
 
-#pwformsize {
+#flat-form {
   width: 500px;
   padding-left: 17px;
 }
-

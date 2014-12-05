@@ -1,21 +1,29 @@
-<%= form_for(@flat) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %><br>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-9">
+        <div id="flat-form">
 
-  <%= f.label :address %>
-  <%= f.text_field :address %><br>
+          <%= form_for(@flat) do |f| %>
+            <%= f.text_field :title, class: "form-control", placeholder: 'Title' %><br>
 
-  <%= f.label :price_per_day %>
-  <%= f.number_field :price_per_day %><br>
 
-  <%= f.label :capacity %>
-  <%= f.number_field :capacity %><br>
+            <%= f.text_field :address, class: "form-control", placeholder: 'Address' %><br>
 
-  <%= f.label :housing_type %>
-  <%= f.select :housing_type, options_for_select([['Flat', 'Flat'], ['House', 'House'], ['Castle', 'Castle']]) %><br>
+            <%= f.number_field :price_per_day, class: "form-control", placeholder: 'Price per day'  %><br>
 
-  <%= f.label :description %>
-  <%= f.text_area :description %><br>
+            <%= f.number_field :capacity, class: "form-control", placeholder: 'Capacity' %><br>
 
-  <%= f.submit %>
-<% end %>
+            <%= f.select :housing_type, options_for_select([['Flat', 'Flat'], ['House', 'House'], ['Castle', 'Castle']]), {:include_blank => "Select house type"}, class: "form-control" %><br>
+
+            <%= f.text_area :description, class: 'form-control', placeholder: 'Description' %><br>
+
+            <%= f.submit class: 'btn btn-default', placeholder: 'Create my flat'%>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="col-xs-3">
+      </div>
+
+    </div>
+  </div>
