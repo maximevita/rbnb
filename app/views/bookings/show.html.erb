@@ -1,25 +1,29 @@
-<div class="container">
-        <div class="row">
-          <!-- <ul class="text-center list-unstyled"> -->
-              <% if @flat.user == current_user %>
+<div id='wrap-bookings'>
+   <div id='wrap-text'>
+    <div class="container">
+            <div class="row">
+              <!-- <ul class="text-center list-unstyled"> -->
+                  <% if @flat.user == current_user %>
+                    <div class="col-xs-12 col-sm-6 margin-btn">
+                      <%= link_to "Update the request status", edit_booking_path(@booking), class: "btn btn-default"%>
+                      <p> Your flat (<%= @flat.title %>) was booked <%= link_to @flat.title, flat_path(@booking.flat) %> from the <strong><%= @booking.begin_date %></strong> to the <strong><%= @booking.end_date %></strong> </p>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 margin-btn">
+                  <% elsif @booking.user == current_user %>
+                    <p>You booked <%= link_to @flat.title, flat_path(@booking.flat) %> from the <strong><%= @booking.begin_date %></strong> to the <strong><%= @booking.end_date %></strong> </p>
+                    <p><%= link_to "Review and rate your booking", edit_booking_path(@booking) %></p>
+                  </div>
+                  <% end %>
+                <!-- shared between owner and renter -->
                 <div class="col-xs-12 col-sm-6 margin-btn">
-                  <%= link_to "Update the request status", edit_booking_path(@booking), class: "btn btn-default"%>
-                  <p> Your flat (<%= @flat.title %>) was booked <%= link_to @flat.title, flat_path(@booking.flat) %> from the <strong><%= @booking.begin_date %></strong> to the <strong><%= @booking.end_date %></strong> </p>
+                  <%= link_to "Back to requests and bookings", bookings_path, class: "btn btn-default" %>
+                    <p>The request status is currently: <strong><%= @booking.request_status %></strong></p>
+                    <p>Rating: <%= @booking.rating %> stars</p>
+                    <p>Review for this booking: <%= @booking.review %></p>
                 </div>
-                <div class="col-xs-12 col-sm-6 margin-btn">
-              <% elsif @booking.user == current_user %>
-                <p>You booked <%= link_to @flat.title, flat_path(@booking.flat) %> from the <strong><%= @booking.begin_date %></strong> to the <strong><%= @booking.end_date %></strong> </p>
-                <p><%= link_to "Review and rate your booking", edit_booking_path(@booking) %></p>
-              </div>
-              <% end %>
-            <!-- shared between owner and renter -->
-            <div class="col-xs-12 col-sm-6 margin-btn">
-              <%= link_to "Back to requests and bookings", bookings_path, class: "btn btn-default" %>
-                <p>The request status is currently: <strong><%= @booking.request_status %></strong></p>
-                <p>Rating: <%= @booking.rating %> stars</p>
-                <p>Review for this booking: <%= @booking.review %></p>
+              <!-- </ul> -->
             </div>
-          <!-- </ul> -->
-        </div>
-      </div>
+          </div>
+    </div>
+  </div>
 </div>
