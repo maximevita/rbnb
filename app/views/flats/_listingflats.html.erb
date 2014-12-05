@@ -7,8 +7,14 @@
           <div class="col-xs-12 col-sm-4 text-center">
             <h3><%= link_to flat.title, flat_path(flat) %></h3>
             <p><%= flat.price_per_day %> € / day</p>
-            <%= link_to flat_path(flat) %>
-          </div>
+              <% if flat.pictures != [] %>
+                <% flat.pictures.each do |pic| %>
+                  <%= image_tag pic.flat_image(:medium) unless pic.seed_picture_url %>
+                  <%= image_tag pic.seed_picture_url unless nil %>
+                <% end %>
+              <% else %>
+              <% end %>
+            </div>
           </li>
           <% end %>
       <% else %>
