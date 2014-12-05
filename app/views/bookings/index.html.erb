@@ -1,18 +1,24 @@
-<h2>My bookings</h2>
+<div id='wrap-bookings'>
+  <div id='wrap-text'>
+    <h2>My bookings</h2>
 
-<% @bookings.each do |booking| %>
-  <p> From the <%= booking.begin_date %></p>
-  <p> To the <%= booking.end_date %></p>
-  <p><%= booking.request_status %></p>
-  <p><%= link_to "See this booking", booking_path(booking)%></p>
-<% end %>
+    <% @bookings.each do |booking| %>
+      <p> From the <%= booking.begin_date %></p>
+      <p> To the <%= booking.end_date %></p>
+      <p><%= booking.request_status %></p>
+      <p><%= link_to "See this booking", booking_path(booking)%></p>
+      <br>
+    <% end %>
 
-<h2>My requests</h2>
+    <h2>My requests</h2>
 
-<% @requests.each do |request| %>
-  <h3> Booking Request for your flat (flat title)</h3>
-  <p> From the <%= request.begin_date %></p>
-  <p> To the <%= request.end_date %></p>
-  <p><%= request.request_status %></p>
-  <p><%= link_to "See this request", booking_path(request)%></p>
-<% end %>
+    <% @requests.each do |request| %>
+      <h3> Booking Request for your flat (flat title)</h3>
+      <p> From the <%= request.begin_date %></p>
+      <p> To the <%= request.end_date %></p>
+      <p><%= request.request_status %></p>
+      <p><%= link_to "See this request", booking_path(request)%></p>
+      <br>
+    <% end %>
+  </div>
+</div>
