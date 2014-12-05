@@ -1,33 +1,33 @@
 <div id='wrap-that-flat'>
-  <div class="container">
-    <div class="row">
-      <ul class="list-unstyled">
-        <% if @flats != [] %>
-          <% @flats.each do |flat| %>
-          <li>
-            <div class="col-xs-12 col-sm-4 text-center">
-              <h3><%= link_to flat.title, flat_path(flat) %></h3>
-              <p><%= flat.price_per_day %> € / day</p>
-                <div id='flat-picture'>
-                  <% if flat.pictures != [] %>
-                    <% flat.pictures.each do |pic| %>
-                      <%= image_tag pic.flat_image(:medium) unless pic.seed_picture_url %>
-                      <%= image_tag pic.seed_picture_url unless nil %>
-                    <% end %>
-                  <% else %>
-                    <%= image_tag "http://ikonal.com/wp-content/uploads/2011/08/maisons-bizarres-186753.jpg", size: "350" %>
-                  <% end %>
-                </div>
+<div class="container">
+  <div class="row">
+    <ul class="list-unstyled">
+      <% if @flats != [] %>
+        <% @flats.each do |flat| %>
+        <li>
+          <div class="col-xs-12 col-sm-4 text-center">
+            <h3><%= link_to flat.title, flat_path(flat) %></h3>
+            <p><%= flat.price_per_day %> € / day</p>
+              <div id='flat-picture'>
+              <% if flat.pictures != [] %>
+                <% flat.pictures.each do |pic| %>
+                  <%= image_tag pic.flat_image(:medium) unless pic.seed_picture_url %>
+                  <%= image_tag pic.seed_picture_url unless nil %>
+                <% end %>
+              <% else %>
+                <%= image_tag "http://ikonal.com/wp-content/uploads/2011/08/maisons-bizarres-186753.jpg", size: "250" %>
+              <% end %>
               </div>
-            </li>
-            <% end %>
-        <% else %>
-          <div class="col-xs-12 text-center">
-            <h3>No flats to display!</h3>
-            <li><%= link_to 'Add your flat!', new_flat_path, class: "btn btn-primary", id: "nav-btn", class: "add-a-flat" %></li>
-          </div>
-        <% end %>
-      </ul>
-    </div>
+            </div>
+          </li>
+          <% end %>
+      <% else %>
+        <div class="col-xs-12 text-center">
+          <h3>No flats to display!</h3>
+          <li><%= link_to 'Add your flat!', new_flat_path, class: "btn btn-primary", id: "nav-btn", class: "add-a-flat" %></li>
+        </div>
+      <% end %>
+    </ul>
   </div>
+</div>
 </div>
