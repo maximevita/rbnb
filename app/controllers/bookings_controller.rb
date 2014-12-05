@@ -31,8 +31,6 @@ class BookingsController < ApplicationController
     if @booking.valid?
       @booking.request_status = "Pending"
       @booking.save
-      # send a notification to the flat owner
-      # notify_owner unless owner == current_user
       redirect_to booking_path(@booking)
     else
       render :new
@@ -40,12 +38,6 @@ class BookingsController < ApplicationController
   end
 
   def edit
-  end
-
-  def notify_owner
-    # alert flat owner
-    # owner = @flat.user
-    # list the booking in the owner's bokking requests
   end
 
   def update
