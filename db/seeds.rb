@@ -28,7 +28,13 @@
 
     picture = Picture.new(
       flat_id: flat.id,
-      seed_picture_url: 'http://lorempixel.com/250/250/city/'
+      # seed_picture_url: 'http://lorempixel.com/250/250/city/'
+      seed_picture_url: [
+        'http://www.linternaute.com/actualite/argent/06/chateaux-a-vendre/0606/images/chateau-fort1.jpg',
+        'http://www.lesandelys-tourisme.fr/wp-content/uploads/krea3medias/chateau-gaillard-304.jpg',
+        'http://www.coupsdecoeurpourlemonde.com/wp-content/uploads/2012/02/Chateau_Frontenac-M_Julien-.jpg',
+        'http://blog.idphys.fr/wp-content/uploads/2011/03/Maison.jpg'
+      ].sample
       )
     picture.save
   end

@@ -9,9 +9,13 @@ class FlatsController < ApplicationController
   end
 
   def search
-    @flats = Flat.where("address LIKE ?", "%#{search_params[:address]}%").where("#{:capacity} > #{search_params[:people]}")
-    search_dates = {begin_date: search_params[:start], end_date: search_params[:end]}
-    session[:search_dates] = search_dates
+    if search_params[:address].nil? && search_params[:capacity].nil?
+      @flats = Flat.al
+    else
+      @flats = Flat.where("address LIKE ?", "%#{search_params[:address]}%").where("#{:capacity} > #{search_params[:people]}")
+      search_dates = {begin_date: search_params[:start], end_date: search_params[:end]}
+      session[:search_dates] = search_dates
+    end
   end
 
   def myflats
